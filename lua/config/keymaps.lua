@@ -4,7 +4,7 @@ vim.g.mapleader = " "
 vim.g.autoformat = true
 
 local keymap = vim.keymap
-keymap.set("n", "<leader>pv", vim.cmd.Ex)
+-- keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- move line up and down
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
