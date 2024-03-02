@@ -47,6 +47,20 @@ return {
           },
         },
       },
+      gopls = {
+        root_dir = function(...)
+          return require("lspconfig.util").root_pattern(".git")(...)
+        end,
+        settings = {
+          gopls = {
+            analyses = {
+              unusedparams = true,
+            },
+            staticcheck = true,
+            gofumpt = true,
+          },
+        },
+      },
       html = {},
       yamlls = {
         settings = {
