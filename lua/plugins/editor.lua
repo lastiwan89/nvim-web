@@ -1,5 +1,18 @@
 return {
   {
+    -- set lualine as status line
+    "nvim-lualine/lualine.nvim",
+    -- See `:help lualine.txt`
+    opts = {
+      options = {
+        icons_enabled = false,
+        theme = "rose-pine",
+        component_separator = "|",
+        section_separator = "",
+      },
+    },
+  },
+  {
     "echasnovski/mini.hipatterns",
     event = "BufReadPre",
     opts = function()

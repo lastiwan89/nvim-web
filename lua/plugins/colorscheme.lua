@@ -132,4 +132,6 @@ return {
       },
     },
   },
+  -- gruvbox-material
+  { "wittyjudge/gruvbox-material.nvim" },
 }
