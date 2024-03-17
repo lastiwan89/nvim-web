@@ -11,7 +11,7 @@ return {
 		name = "rose-pine",
 		config = function()
 			require("rose-pine").setup({
-				variant = "moon", -- auto, main, moon, or dawn
+				variant = "auto", -- auto, main, moon, or dawn
 				dark_variant = "main", -- main, moon, or dawn
 				dim_inactive_windows = false,
 				extend_background_behind_borders = true,
@@ -59,25 +59,26 @@ return {
 					h6 = "foam",
 				},
 
-				highlight_groups = {
-					-- Comment = { fg = "foam" },
-					-- VertSplit = { fg = "muted", bg = "muted" },
-				},
+				-- highlight_groups = {
+				-- Comment = { fg = "foam" },
+				-- VertSplit = { fg = "muted", bg = "muted" },
+				-- },
 
-				before_highlight = function(group, highlight, palette)
-					-- Disable all undercurls
-					if highlight.undercurl then
-						highlight.undercurl = false
-					end
-
-					-- Change palette colour
-					if highlight.fg == palette.pine then
-						highlight.fg = palette.foam
-					end
-				end,
+				-- before_highlight = function(group, highlight, palette)
+				-- Disable all undercurls
+				-- if highlight.undercurl then
+				--     highlight.undercurl = false
+				-- end
+				--
+				-- Change palette colour
+				-- if highlight.fg == palette.pine then
+				--     highlight.fg = palette.foam
+				-- end
+				-- end,
 			})
 		end,
 	},
+
 	-- catpuccin
 	{
 		"catppuccin/nvim",
@@ -121,6 +122,7 @@ return {
 			},
 		},
 	},
+
 	-- tokyonight
 	{
 		"folke/tokyonight.nvim",
@@ -132,6 +134,7 @@ return {
 			},
 		},
 	},
+
 	-- gruvbox-material
 	{ "wittyjudge/gruvbox-material.nvim" },
 }
