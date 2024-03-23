@@ -23,6 +23,8 @@ return {
                 "cssls",
                 "tailwindcss",
                 "gopls",
+                "prettier",
+                "eslint_d",
             },
             handlers = {
                 function(server_name) -- default handkler (optional)
@@ -94,10 +96,12 @@ return {
                 -- gopls
                 ["gopls"] = function()
                     local lspconfig = require("lspconfig")
-                    lspconfig.lua_ls.setup {
+                    local util_lsp = require("lspconfig/util")
+                    lspconfig.gopls.setup {
                         cmd = { "gopls" },
                         filetypes = { "go", "gomod", "gowork", "gotmpl" },
-                        root_dir = require("lspconfig/util").root_pattern("go.work", "go.mod", ".git"),
+                        root_dir = util_lsp.root_pattern("go.work", "go.mod", ".git"),
+                        single_file_support = true,
                         settings = {
                             gopls = {
                                 completeUnimported = true,
@@ -129,6 +133,7 @@ return {
                 ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
                 ['<C-y>'] = cmp.mapping.confirm({ select = true }),
                 ['<C-space>'] = cmp.mapping.complete(),
+                ['<CR>'] = cmp.mapping.confirm({ select = true }), -- i like to use enter too
             }),
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },
