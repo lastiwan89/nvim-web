@@ -6,21 +6,13 @@ return {
     },
 
     config = function()
-        local neogen = require("neogen").setup({
+        require("neogen").setup({
             snippet_engine = "luasnip"
         })
 
-        vim.keymap.set("n", "<leader>nf", function()
-            neogen.generate({ type = "func" })
-        end)
-
-
-        vim.keymap.set("n", "<leader>nt", function()
-            neogen.generate({ type = "type" })
-        end)
-
-        vim.keymap.set("n", "<leader>nd", function()
-            neogen.generate({ type = "typedef" })
-        end)
+        vim.keymap.set("n", "<leader>nf", ":lua require('neogen').generate({ type =  'func' })<CR>")
+        vim.keymap.set("n", "<leader>nt", ":lua require('neogen').generate({ type =  'type' })<CR>")
+        vim.keymap.set("n", "<leader>nc", ":lua require('neogen').generate({ type =  'class' })<CR>")
+        vim.keymap.set("n", "<leader>nd", ":lua require('neogen').generate({ type =  'typedef' })<CR>")
     end,
 }
