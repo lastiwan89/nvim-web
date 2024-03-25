@@ -10,7 +10,7 @@ return {
         require("nvim-treesitter.configs").setup {
             -- A list of parser names, or "all"
             ensure_installed = {
-                "vimdoc", "javascript", "typescript", "c", "lua", "rust", "jsdoc", "go"
+                "vimdoc", "javascript", "typescript", "c", "lua", "rust", "jsdoc", "go", "json",
             },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -22,6 +22,14 @@ return {
 
             indent = {
                 enable = true
+            },
+
+            autotag = {
+                enable = true,
+                enable_rename = true,
+                enable_close = true,
+                enable_close_on_slash = true,
+                filetypes = { "html", "xml" },
             },
 
             highlight = {
